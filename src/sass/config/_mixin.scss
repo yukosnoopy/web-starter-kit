@@ -1,0 +1,34 @@
+// ミックスイン
+// ==========================================================================
+
+// media query
+// --------------------------------------------------------------------------
+
+// 1. マルチデバイスで共通のスタイルを記述する
+// 2. @include media-pcの中にPC向けのスタイルを記述する
+// 3. @include media-spの中にスマートフォン向けのスタイルを記述する
+
+// ```scss
+// .example {
+//   display: flex; // 1
+//
+//   @include media-pc {
+//     flex-direction: row; // 2
+//   }
+//
+//   @include media-sp {
+//     flex-direction: column; // 3
+//   }
+// }
+// ```
+@mixin media-pc {
+  @media only screen and (min-width: $media-pc) {
+    @content;
+  }
+}
+
+@mixin media-sp {
+  @media only screen and (max-width: $media-sp) {
+    @content;
+  }
+}

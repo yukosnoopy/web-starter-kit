@@ -1,0 +1,67 @@
+// CSS設計手法: FLOCSS
+// https://github.com/hiloki/flocss
+
+@charset "utf-8";
+
+// Config
+// ==========================================================================
+
+// 変数
+@import "config/vars";
+
+// ミックスイン
+@import "config/mixin";
+
+
+// Foundation
+// ==========================================================================
+
+// 要素のNormalizeと近年の開発手法に合わせたReset系CSS
+@import "foundation/sanitize";
+
+// フォントファイルの読み込み
+@import "foundation/font";
+
+// サイトのベースとなるスタイル
+@import "foundation/base";
+
+
+// Layout
+// ==========================================================================
+
+// 共通ヘッダー（レイアウト部分のみ）
+@import "layout/header";
+
+// メインコンテンツ（レイアウト部分のみ）
+@import "layout/main";
+
+// 共通フッター（レイアウト部分のみ）
+@import "layout/footer";
+
+
+// Object
+// ==========================================================================
+
+// Component
+// --------------------------------------------------------------------------
+
+// ボタン
+@import "object/component/btn";
+
+// タイトル
+@import "object/component/title";
+
+// コンテンツ幅
+@import "object/component/wrap";
+
+// Project
+// --------------------------------------------------------------------------
+
+// 共通ヘッダー（レイアウト以外）
+@import "object/project/header";
+
+// 共通フッター（レイアウト以外）
+@import "object/project/footer";
+
+// Utility
+// --------------------------------------------------------------------------

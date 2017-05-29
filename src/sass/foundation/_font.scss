@@ -1,0 +1,24 @@
+// フォントフェイス
+// ==========================================================================
+
+// 游ゴシック
+// --------------------------------------------------------------------------
+
+// Windowsで游ゴシックが細くならないための設定
+// 1. Postscript name
+// 2. For chrome
+// 3. For Win8.1
+@font-face {
+  font-family: "MyYuGothicM";
+  font-weight: normal;
+  src: local("YuGothic-Medium"), // 1
+       local("Yu Gothic Medium"), // 2
+       local("YuGothic-Regular"); // 3
+}
+
+@font-face {
+  font-family: "MyYuGothicM";
+  font-weight: bold;
+  src: local("YuGothic-Bold"), // 1
+       local("Yu Gothic"); // 2
+}

@@ -1,0 +1,12 @@
+{
+  "validateIndentation": 2,
+  "disallowClassAttributeWithStaticValue": true,
+  "disallowClassLiteralsBeforeIdLiterals": true,
+  "disallowDuplicateAttributes": true,
+  "requireClassLiteralsBeforeAttributes": true,
+  "requireSpecificAttributes": [
+    {"img": "alt"},
+    {"img": "src"},
+    {"form": "action"}
+  ]
+}

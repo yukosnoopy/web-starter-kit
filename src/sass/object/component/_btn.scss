@@ -1,0 +1,65 @@
+// ボタン
+// Note: デフォルトクラスとモディファイアクラスをマルチクラスで付与
+// ==========================================================================
+
+// ``` pug
+// button.c-btn.c-btn--primary.c-btn--large read more
+// ```
+
+.c-btn {
+  display: inline-block;
+  border: 1px solid transparent;
+  outline: none;
+  text-align: center;
+  cursor: pointer;
+  vertical-align: middle;
+
+  // Color and Shape
+  // ------------------------------------------------------------------------
+
+  // .c-btn--primary
+  &--primary {
+    border-color: $color-link;
+    background-color: $color-link;
+    color: $color-highlight;
+
+    &:hover {
+      background-color: $color-default;
+    }
+  }
+
+  // .c-btn--outline
+  &--outline {
+    // add style
+
+    &:hover {
+      // hover style
+    }
+  }
+
+  // Size
+  // ------------------------------------------------------------------------
+
+  // .c-btn--small
+  &--small {
+    width: 200px;
+    font-size: 18px;
+    // add style
+  }
+
+  // .c-btn--normal
+  &--normal {
+    // add style
+  }
+
+  // .c-btn--large
+  &--large {
+    // width: 100%;
+  }
+
+  // Other
+  // ------------------------------------------------------------------------
+  &[disabled] {
+    cursor: not-allowed;
+  }
+}
