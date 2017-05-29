@@ -3,7 +3,7 @@
 
 ## 使用方法
 1. ファイルを作業フォルダに落とす  
-`git clone https://github.com/yukosnoopy/web-starter-kit.git`
+`$ git clone https://github.com/yukosnoopy/web-starter-kit.git`
 
 2. パッケージをインストール  
 `$ npm i`
