@@ -5,8 +5,9 @@
   "disallowDuplicateAttributes": true,
   "requireClassLiteralsBeforeAttributes": true,
   "requireSpecificAttributes": [
-    {"img": "alt"},
-    {"img": "src"},
-    {"form": "action"}
+    {"img"   : "alt"},
+    {"img"   : "src"},
+    {"form"  : "action"},
+    {"button": "type"}
   ]
 }
