@@ -1,18 +1,26 @@
 doctype html
 html(lang='ja', dir="ltr", itemscope itemtype="//schema.org/WebPage")
   head
+    - var title = "example title"
+    - var description = "example description"
     meta(charset="UTF-8")
-    meta(name="viewport", content="width=device-width,initial-scale=1")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
     block title
-      title add title
+      title #{title}
     block meta
-      meta(name="description", content="")
-      meta(name="keyword", content="")
-    include _ogp
+      meta(name="description", content=description)
+      meta(property="og:title", content=title)
+      meta(property="og:type", content="website")
+      meta(property="og:description", content=description)
+      meta(property="og:image", content="")
+      meta(property="og:url", content="")
+      meta(property="og:locale", content="ja_JP")
     block css
       link(rel="stylesheet", href="/css/common.css")
     block js
       script(src="/js/lib.js")
       script(src="/js/common.js")
   body
-    block body
+    include _header
+    block contents
+    include _footer
