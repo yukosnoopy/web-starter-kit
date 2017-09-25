@@ -11,7 +11,7 @@ var reload      = browserSync.reload;
 
 // Source path
 var path = {
-  html      : 'src/pug/*.pug',
+  html      : ['src/pug/**/*.pug', '!src/pug/**/_*.pug'],
   htmlWatch : 'src/pug/**',
   css       : 'src/sass/**/*.scss',
   cssLib    : 'src/sass/lib/*.css',
@@ -25,16 +25,16 @@ var path = {
 };
 
 var envSettings = {
-  string: 'env',
+  string : 'env',
   default: {
     env: process.env.NODE_ENV || 'development'
   }
 }
 
 // Environment
-var options = minimist(process.argv.slice(2), envSettings);
+var options    = minimist(process.argv.slice(2), envSettings);
 var production = options.env === 'production';
-var config = {
+var config     = {
   envProduction: production
 }
 
@@ -56,14 +56,12 @@ function css() {
     .pipe($.plumber({errorHandler: $.notify.onError('<%= error.message %>')}))
     .pipe($.if(!config.envProduction, $.sourcemaps.init()))
     .pipe($.sass({outputStyle: 'expanded'}))
-    // .pipe($.uncss({
-    //   html: ['dest/*.html', 'dest/**/*.html'],
-    //   ignore: [/^\.is-/]
-    // }))
     .pipe($.pleeease({
-      autoprefixer: ['last 2 versions'],
-      minifier: false,
-      mqpacker: true
+      pseudoElements: false,
+      opacity       : false,
+      autoprefixer  : ["last 2 versions", "ie >= 11", "iOS >= 9", "Android >= 4.4"],
+      minifier      : false,
+      mqpacker      : true
     }))
     .pipe($.if(config.envProduction, $.cssmin()))
     .pipe($.size({title: 'sass'}))
