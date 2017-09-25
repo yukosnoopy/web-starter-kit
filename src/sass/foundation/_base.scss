@@ -39,3 +39,11 @@ button,
   padding: 0;
   line-height: $line-height-default;
 }
+
+small {
+  font-size: inherit;
+}
+
+svg {
+  fill: currentColor;
+}
